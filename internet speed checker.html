@@ -1,0 +1,114 @@
+<!doctype html>
+<html> 
+ <head> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Internet Speed Checker Tool</title> 
+  <link rel="stylesheet" href="style.css"> 
+ <style type="text/css" id="dcoder_stylesheet">h1{text-align: center;}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+#check-speed-btn {
+  padding: 10px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 5vh;
+}
+
+.circle-container {
+position: relative;
+}
+
+.circle-svg {
+//  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.circle {
+  fill: none;
+  stroke: #ddd;
+  stroke-width: 10;
+  stroke-linecap: round;
+  stroke-dasharray: 310;
+  transform: rotate(-90deg);
+  transform-origin: center;
+  transition: stroke-dashoffset 0.5s ease-in-out;
+}
+
+.circle-text {
+  fill: #333;
+  font-size: 10px;
+  font-weight: bold;
+  text-anchor: middle;
+  dominant-baseline: middle;
+}
+
+.circle.green {
+  stroke: #2ecc71;
+}</style></head> 
+ <body> 
+  <script async data-cfasync="false" src="ophoacit.com/1?z=5800987"></script> 
+  <h1>Internet Speed Checker Tool</h1> 
+  <div class="container"> <button id="check-speed-btn">Check Speed</button> 
+   <div class="circle-container"> 
+    <svg class="circle-svg" width="250" height="250" viewbox="0 0 100 100"> <circle class="circle" cx="50" cy="50" r="45"></circle> <text class="circle-text" x="50%" y="50%">
+       0 Mbps 
+     </text> 
+    </svg> 
+   </div> 
+  </div> 
+  <footer style="background-color: black; color: white; text-align: center; padding: 1rem 0; margin-top: 8vh;"> 
+   <div style="display: flex; flex-wrap: wrap; justify-content: center;"> 
+    <div style="flex: 1;"> 
+     <p><a style="color: white; text-decoration: none;" href="index.html">Home</a></p> 
+     <p><a style="color: white; text-decoration: none;" href="About.html">About us</a></p> 
+     <p><a style="color: white; text-decoration: none;" href="contact.html">Contact us</a></p> 
+    </div> 
+    <div style="flex: 1;"> 
+     <p><a style="color: white; text-decoration: none;" href="termsandc.html">Terms and Conditions</a></p> 
+     <p><a style="color: white; text-decoration: none;" href="privacyandpy.html">Privacy Policy</a></p> 
+     <p><a style="color: white; text-decoration: none;" href="discription.html">Description</a></p> 
+    </div> 
+    <div style="flex: 1;"> 
+     <p><a style="color: white; text-decoration: none;" href="disclaimer.html">Disclaimer</a></p> 
+    </div> 
+   </div> 
+   <p style="margin-top: 1rem;">Created by <a style="color: white; text-decoration: none;" href=" https://instagram.com/bhuvnesh_raghav01?igshid=Yzg5MTU1MDY= ">Bhuvnesh Raghav</a></p> 
+  </footer> 
+ 
+<script type="text/javascript" id="dcoder_script">const checkSpeedBtn = document.getElementById('check-speed-btn');
+const circle = document.querySelector('.circle');
+const circleText = document.querySelector('.circle-text');
+
+checkSpeedBtn.addEventListener('click', () => {
+  circle.classList.remove('green');
+  circle.style.strokeDashoffset = 283; // reset circle
+  circleText.textContent = 'Testing...';
+
+  const startTime = Date.now();
+  const fileSize = 5e6; // 5 MB file
+  const downloadUrl = 'https://cdn.pixabay.com/photo/2021/03/15/12/52/flowers-6094889_1280.jpg'; // replace with your own file URL
+
+  fetch(downloadUrl)
+    .then(response => {
+      const endTime = Date.now();
+      const duration = (endTime - startTime) / 1000;
+      const speedMbps = ((fileSize / duration) * 8) / 1e6; // convert to Mbps
+      circle.classList.add('green');
+      circle.style.strokeDashoffset = 283 - (speedMbps * 283 / 100); // set circle stroke-dashoffset based on speed
+      circleText.textContent = `${speedMbps.toFixed(2)} Mbps`;
+    })
+    .catch(error => {
+      console.error(error);
+      circleText.textContent = 'Failed to check internet speed';
+    });
+});</script></body></html>
