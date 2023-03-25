@@ -12,7 +12,7 @@ function sendNotification() {
 
   $message = array(
 
-    'title' => 'Breaking news !',
+    'title' => 'Breaking news 😱 !',
 
     'body' => 'Check out the latest Breaking news on our website',
 
