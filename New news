@@ -14,7 +14,7 @@ function sendNotification() {
 
     'title' => 'Breaking news !',
 
-    'body' => 'Check out the latest Breaking news on our website,'
+    'body' => 'Check out the latest Breaking news on our website',
 
     'url' => 'https://ocenfeed.blogspot.com/'
 
