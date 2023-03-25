@@ -22,7 +22,7 @@ function sendNotification() {
 
   $headers = array(
 
-    'Authorization: key=YOUR_SERVER_KEY',
+    'Authorization: key=AAAAevKon5g:APA91bHiApaHXmjU8Wx4CtnL8nRIh5MkTECEqjeBB96lnR3Np_RQqN-uyWF55ahE0oHF5YJiDvtYz3Pqebv-YtFxHGw2JMEfAoTy0BWZuyF8vVRvwQZR_fwJE5sPA8nQ9aduc4Uuilea',
 
     'Content-Type: application/json'
 
